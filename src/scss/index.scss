@@ -1,0 +1,199 @@
+@import "variables";
+@import "base";
+
+@media (min-width: 320px) {
+    .wrapper {
+        max-width: 310px;
+        margin: 20px auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $greyColor;
+            padding: 10px 20px 20px;
+
+            &__container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
+            }
+
+            &__title {
+                width: 100%;
+                font-size: 3.7rem;
+                color: $whiteColor;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            &__player-x {
+                flex-basis: 45%;
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 30px;
+                margin-right: 10px;
+            }
+
+            &__player-o {
+                flex-basis: 45%;
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            &__information {
+                width: 100%;
+                font-size: 1.6rem;
+                color: $whiteColor;
+                text-align: center;
+                padding: 10px 10px 0;
+            }
+        }
+
+        .board {
+            display: flex;
+            flex-wrap: wrap;
+            width: 310px;
+            height: 310px;
+            background-color: $whiteColor;
+            margin-top: 20px;
+
+            &__tile {
+                width: 33.3%;
+                height: 33.3%;
+                border-left: 2px solid $greenColor;
+                border-bottom: 2px solid $greenColor;
+                color: #555;
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    border-top: 2px solid $greenColor;
+                }
+
+                &:nth-child(3),
+                &:nth-child(6),
+                &:nth-child(9) {
+                    border-right: 2px solid $greenColor;
+                }
+
+                &--o {
+                    width: 90%;
+                    height: 90%;
+                    margin: calc((100% - 90%) / 2) auto;
+                    border: 3px solid $greyColor;
+                    border-radius: 50%;
+                }
+
+                &--x-one {
+                    width: 120%;
+                    transform: rotate(45deg) translateX(8%);
+                    transform-origin: 0;
+                    border-bottom: 3px solid $greyColor;
+                }
+
+                &--x-two {
+                    width: 120%;
+                    transform: rotate(-45deg) translateX(-25%);
+                    transform-origin: 80%;
+                    border-bottom: 3px solid $greyColor;
+                }
+            }
+        }
+
+        .btn {
+            background-color: $greenColor;
+            cursor: pointer;
+            border: 2px solid $greenColor;
+            color: #fff;
+            font-family: Verdana;
+            font-size: 2rem;
+            padding: 6px 24px;
+            outline: none;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $whiteColor;
+                color: #555;
+            }
+
+            &:active {
+                transform: translateY(3px);
+            }
+
+            &--active {
+                border-bottom-color: $redColor;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                transform: translateY(0);
+                background-color: $greenColor;
+                color: $whiteColor;
+            }
+        }
+    }
+}
+
+@media (min-width: 360px) {
+    .wrapper {
+        max-width: 350px;
+
+        .header {
+            padding: 10px 20px 20px;
+        }
+
+        .board {
+            width: 350px;
+            height: 350px;
+        }
+    }
+}
+
+@media (min-width: 414px) {
+    .wrapper {
+        max-width: 400px;
+
+        .header {
+            &__title {
+                font-size: 4rem;
+            }
+        }
+
+        .board {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        max-width: 500px;
+
+        .header {
+            &__title {
+                font-size: 4.8rem;
+            }
+        }
+
+        .board {
+            width: 500px;
+            height: 500px;
+        }
+
+        .btn {
+            font-size: 2.2rem;
+        }
+    }
+}
