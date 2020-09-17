@@ -15,7 +15,7 @@ Run 'npm start' to launch webpack-dev-server
 ### Technologies Used
 
 -   JavaScript ES6+
--   Scss & BEM
+-   Sass & BEM
 -   Webpack
 -   Babel
 
